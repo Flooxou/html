@@ -1,0 +1,37 @@
+.titre{
+    color:#c44dff;
+}
+
+/*---NAVBAR---*/
+
+#navbarcss {
+    background-color: black;
+}
+
+#navtxt {
+    font-size: 18px;
+    color: #c44dff;
+}
+
+#navtxt:hover {
+    color: #cca300;
+    transition: all 0.3s;
+    text-decoration:none;
+}
+
+.nav-link-actif{
+    font-size: 19px;
+    color: #fdf1b8;
+}
+
+/*---BODY---*/
+
+.body{
+    background-color: rgb(31, 31, 31);
+    height: 80%;
+}
+
+#foottxt {
+    font-size: 18px;
+    color: #c44dff;
+}

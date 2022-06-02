@@ -1,0 +1,38 @@
+.titre {
+    color: #cca300;
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #cca300;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 50%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 35%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+.login-main-text{
+    margin-top: 45%;
+    padding: 60px;
+    color: black;
+}
