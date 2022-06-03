@@ -16,12 +16,13 @@ function getHead(){
 }
 
 //Fonction TEST de connexion
-/*function testConnexion(){
+function testConnexion(){
+    session_start();
     if(empty($_SESSION("role"))){
-        header('Location : '. index.html);
+        header('Location : /index.html');
         die();
     }
-}*/
+}
 
 function getHeader(){
     echo '  <header>
@@ -70,8 +71,27 @@ function getNav(){
                         <li class="nav-item">
                             <a class="nav-link" href="annuaire.php" id="navtxt">Annuaire</a>
                         </li>
-                    </ul>
-            </nav>';
+                    </ul>';
+
+    echo '<div class="connexion-header">
+    <span class="text-dark">';
+
+    if (isset($_SESSION["nom"])) {
+        echo $_SESSION["nom"] . '(' . $_SESSION["role"] . ')';
+    }
+    else { echo 'Vous n\'êtes pas connecté.';}
+    echo '</span>';
+
+    if (isset($_SESSION["nom"])) {
+        echo '<a href="connexion/deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>';
+    }
+    else {
+        echo '<a href="connexion/connexion.html" class="btn btn-outline-dark btn-sm">Se connecter</a>';
+    }
+
+    echo '</div>
+    </nav>';
+
 }
 
 function getFooter(){

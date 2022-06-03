@@ -89,7 +89,7 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
 
   $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), true);
 
-  header("Location: /index.html");
+  //header("Location: /index.html");
 
   ?>
 

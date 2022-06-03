@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-    height: 117%;
+    height: 120%;
     background-color: #cca300;
     overflow-x: hidden;
     padding-top: 70px;
@@ -23,7 +23,7 @@
     }
 
     .login-form{
-        margin-top: 35%;
+        margin-top: 17%;
     }
 
     .register-form{
