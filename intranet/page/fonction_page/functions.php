@@ -7,8 +7,8 @@ function getHead(){
             <head>
                 <meta charset="utf-8">
                 <title>LLSM</title>
-                <link rel="icon" href="/intranet/img/logollsm.ico" />
-                <link rel="stylesheet" href="/intranet/css/intranet.css">
+                <link rel="icon" href="../img/logollsm.ico" />
+                <link rel="stylesheet" href="../css/intranet.css">
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
             </head>
@@ -31,7 +31,7 @@ function getHeader(){
                         <div class="col-sm-4">
                             <ul>
                                 <p>
-                                    <img class="img1" src="/intranet/img/logollsm.png" width="200px" height="200px">
+                                    <img class="img1" src="../img/logollsm.png" width="200px" height="200px">
                                 </p>
                             </ul>
                         </div>
@@ -68,7 +68,7 @@ function getNav(){
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/intranet/page/annuaire.php" id="navtxt">Annuaire</a>
+                            <a class="nav-link" href="annuaire.php" id="navtxt">Annuaire</a>
                         </li>
                     </ul>
             </nav>';
