@@ -51,14 +51,9 @@ for ($i = 0; $i<count($utilisateurs); $i++) {
   }
 }
 
-
-echo '<pre>';
-print_r($utilisateurs);
-echo '</pre>';
+header("Location: /index.html");
 
 ?>
-
-<a href="/intranet/index.html"><button>Retour à l'accueil</button></a>
 
 
 </body>

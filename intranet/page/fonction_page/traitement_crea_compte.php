@@ -1,7 +1,5 @@
 <?php
 //Chargement des utilisateurs
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), true);
 ?>
 <!doctype html>
@@ -91,13 +89,9 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
 
   $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), true);
 
-  echo '<pre>';
-  print_r($utilisateurs);
-  echo '</pre>';
+  header("Location: /index.html");
 
   ?>
-
-  <a href="/index.html"><button>Retour à l'accueil</button></a>
 
 </body>
 </html>
