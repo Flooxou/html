@@ -17,8 +17,7 @@ function getHead(){
 
 //Fonction TEST de connexion
 function testConnexion(){
-    session_start();
-    if(empty($_SESSION("role"))){
+    if(empty($_SESSION["role"])){
         header('Location : /index.html');
         die();
     }
@@ -53,12 +52,12 @@ function getHeader(){
 function getNav(){
     echo '  <nav class="navbar navbar-expand-sm justify-content-center" id="navbarcss">
                     <!-- Links -->
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="navtxt">Gestion des fichiers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="navtxt">Gestion des utilisateurs</a>
+                            <a class="nav-link" href="/page/gestion_utilisateurs.php" id="navtxt">Gestion des utilisateurs</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navtxt">Espace de fichiers</a>                            
@@ -79,14 +78,9 @@ function getNav(){
     if (isset($_SESSION["nom"])) {
         echo $_SESSION["nom"] . '(' . $_SESSION["role"] . ')';
     }
-    else { echo 'Vous n\'êtes pas connecté.';}
-    echo '</span>';
 
     if (isset($_SESSION["nom"])) {
-        echo '<a href="connexion/deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>';
-    }
-    else {
-        echo '<a href="connexion/connexion.html" class="btn btn-outline-dark btn-sm">Se connecter</a>';
+        echo '<a href="/page/fonction_page/traitement_deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>';
     }
 
     echo '</div>
