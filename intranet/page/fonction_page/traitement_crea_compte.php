@@ -7,7 +7,7 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
 <!doctype html>
 <html lang="fr">
 <head>
-  <script type="text/javascript" src="./js/functions.js"></script>
+  <script type="text/javascript" src="/js/functions.js"></script>
 </head>
 <body>
   <?php
@@ -23,7 +23,7 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
 
   for ($i = 0; $i<count($utilisateurs); $i++) {
 
-    if ($email == $utilisateurs[$i]['email'] || $email2 != $email) {
+    if ($email == $utilisateurs[$i]["email"] || $email2 != $email) {
 
       echo '<script> mail1(); </script>';
       die();
@@ -46,24 +46,48 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
   ));
   file_put_contents("../gestion_user/users.json", json_encode($utilisateurs));
 
-  $destinataire = $email;
-  $sujet = "Activer votre compte" ;
-  $entete = "From: no-reply@llsm.sytes.net";
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\SMTP;
+  use PHPMailer\PHPMailer\Exception;
 
 
-  $message = 'Bienvenue sur LLSM,
+  require './PHPMailer/src/Exception.php';
+  require './PHPMailer/src/PHPMailer.php';
+  require './PHPMailer/src/SMTP.php';
+
+  //Create an instance; passing `true` enables exceptions
+  $mail = new PHPMailer(true);
+
+  
+  //Server settings
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+  $mail->isSMTP();                                            //Send using SMTP
+  $mail->Host       = 'smtp.gmail.com';                    //Set the SMTP server to send through
+  $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+  $mail->Username   = 'florian.bourgardez@gmail.com';                     //SMTP username
+  $mail->Password   = 'ymfgrufksanujvfj';                               //SMTP password
+  $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+  $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+  //Recipients
+  $mail->setFrom('no-reply@llsm.sytes.net', 'no-reply');
+  $mail->addAddress($email);     //Add a recipient
+
+  //Content
+  $mail->isHTML(true);                                  //Set email format to HTML
+  $mail->Subject = 'Activation compte LLSM';
+  $mail->Body    = 'Bienvenue sur LLSM,
 
   Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
   ou copier/coller dans votre navigateur Internet.
 
-  http://localhost/intranet/page/fonction_page/activation.php?log='.urlencode($login).'&cle='.urlencode($cle).';
+  http://llsm.sytes.net:8080/page/fonction_page/activation.php?log='.urlencode($login).'&cle='.urlencode($cle).'
 
 
   ---------------
   Ceci est un mail automatique, Merci de ne pas y répondre.';
 
-
-  mail($destinataire, $sujet, $message, $entete) ;
+  $mail->send();
 
   $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), true);
 
@@ -73,7 +97,7 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
 
   ?>
 
-  <a href="index.html"><button>Retour à l'accueil</button></a>
+  <a href="/index.html"><button>Retour à l'accueil</button></a>
 
 </body>
 </html>
