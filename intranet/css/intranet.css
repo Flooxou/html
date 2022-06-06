@@ -35,3 +35,18 @@
     font-size: 18px;
     color: #c44dff;
 }
+
+/*---ANNUAIRE---*/
+
+.cardCeo {
+    width: 700px;
+    margin-left: 60px;
+}
+
+.cardBoss {
+    width: 600px;
+}
+
+.cardEmploye {
+    width: 350px;
+}
