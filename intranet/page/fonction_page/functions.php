@@ -35,7 +35,7 @@ function getHeader(){
                                 </p>
                             </ul>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-4 text-center">
                             <ul>
                                 <br><br>
                                 <p class="titre">
@@ -57,14 +57,13 @@ function getNav(){
                             <a class="nav-link" href="#" id="navtxt">Gestion des fichiers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/page/gestion_utilisateurs.php" id="navtxt">Gestion des utilisateurs</a>
+                            <a class="nav-link" href="gestion_utilisateurs.php" id="navtxt">Gestion des utilisateurs</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navtxt">Espace de fichiers</a>                            
                             <ul class="dropdown-menu" id="navbarcss">
-                                <li><a class="dropdown-item" href="#" id="navtxt">Link</a></li>
-                                <li><a class="dropdown-item" href="#" id="navtxt">Fichiers du groupe X</a></li>
-                                <li><a class="dropdown-item" href="#" id="navtxt">Votre espace de fichiers</a></li>
+                                <li><a class="dropdown-item" href="fichier_groupe.php" id="navtxt">Fichiers de groupe</a></li>
+                                <li><a class="dropdown-item" href="fichier_perso.php" id="navtxt">Votre espace de fichiers</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -89,9 +88,39 @@ function getNav(){
 }
 
 function getFooter(){
-    echo '      <div class="mt-4 p-5 rounded text-center" id="foottxt">
-                    ###FOOTER### !!! ###AFAIRE###
-                </div>
+    echo '      <div class="mt-4 p-5 bg-black">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img class="img-fluid float-left" src="../img/logollsm.png" width="150px" >
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <p class="container justify-text-center" style="color: #cca300" > Suivez nous sur les réseaux :</p>
+                            <br> 
+                            <div class="text-center row">
+                                <div class="col-sm-3">
+                                    <a href="http://www.facebook.com" target="_blank">
+                                    <img src="../img/footer/facebook.png" alt="facebook" width="60px" > 
+                                    </a>
+                                </div>
+                                <div class="col-sm-3">           
+                                    <a href="http://www.instagram.com" target="_blank">
+                                    <img src="../img/footer/instagram.png" alt="insta" width="60px" > 
+                                    </a>  
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="http://www.twitter.com" target="_blank">
+                                    <img src="../img/footer/twitter.png" alt="twitter" width="60px" > 
+                                    </a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="http://www.snapchat.com" target="_blank">
+                                    <img src="../img/footer/snapchat.png" alt="snap" width="60px" > 
+                                    </a>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>             
+                 </div>
             </body>
             </html>';
 }

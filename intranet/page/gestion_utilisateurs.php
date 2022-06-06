@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
   <?php
 
   include("fonction_page/functions.php");
@@ -16,7 +13,9 @@
 
   ?>
 <div class="container">
-  <h2 class="my-4">Ajouter un utilisateur</h2>
+  <br><br>
+  <h3 class="my-4 titre">Ajouter un utilisateur</h3>
+  <br>
   <form action="utilisateur/add_user.php" method="POST">
     <div class="row my-4">
       <div class="col-2">
@@ -39,7 +38,7 @@
       </div>
     </div>
   </form>
-
+  <br><br><br>
   <form action="utilisateur/supp_user.php" method="POST">
     <div class="row my-4">
       <div class="col-2">
@@ -53,12 +52,6 @@
 
 </div>
 
-    <br>
-    <footer>
-      <?php
-      piedpage();
-      ?>
-    </footer>
-
-  </body>
-  </html>
+<?php
+getFooter();
+?>
