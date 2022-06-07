@@ -1,0 +1,41 @@
+en
+conf t
+hostname S1,S2 et S3
+
+channel-group 1 mode on
+int port-channel 1 mode trunk
+
+int range fa 0/5-6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport nonegotiate
+switchport trunk allowed vlan all
+
+no cdp run
+
+vlan Y
+int fa 0/2
+switchport mode access
+switchport access vlan Y
+
+enable password bonjour
+
+line vty 0 4
+password bonjour
+login
+
+
+(S1)spanning-tree vlan 1-100 priority 0
+
+int vlan Y
+ip address 192.168.X.241/24
+
+(S2)spanning-tree vlan 1-100 priority 4096
+
+int vlan Y
+ip address 192.168.X.242/24
+
+(S3)int vlan Y
+ip address 192.168.X.243
+
+
