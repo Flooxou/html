@@ -7,9 +7,6 @@
 
 <?php
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
 $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), true);
 
 
@@ -34,6 +31,7 @@ for ($i = 0; $i<count($utilisateurs); $i++) {
       if ($clebdd == $cle) {
 
         $utilisateurs[$i]['actif'] = 1;
+        file_put_contents("../gestion_user/users.json", json_encode($utilisateurs));
         echo "<script> crea_compte_activation(); </script>";
         die();
 
@@ -51,10 +49,11 @@ for ($i = 0; $i<count($utilisateurs); $i++) {
   }
 }
 
-header("Location: /index.html");
+
 
 ?>
 
 
 </body>
 </html>
+

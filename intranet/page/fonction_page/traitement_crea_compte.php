@@ -58,7 +58,6 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
 
   
   //Server settings
-  $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
   $mail->isSMTP();                                            //Send using SMTP
   $mail->Host       = 'smtp.gmail.com';                    //Set the SMTP server to send through
   $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -79,17 +78,19 @@ $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), tru
   Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
   ou copier/coller dans votre navigateur Internet.
 
+  Votre lgoin pour vous connecter à notre intranet sera le suivant : '. $login .'.
+
   http://llsm.sytes.net:8080/page/fonction_page/activation.php?log='.urlencode($login).'&cle='.urlencode($cle).'
 
 
-  ---------------
+  ------------------------------------------------------------
   Ceci est un mail automatique, Merci de ne pas y répondre.';
 
   $mail->send();
 
   $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), true);
 
-  //header("Location: /index.html");
+  header("Location: /index.html");
 
   ?>
 

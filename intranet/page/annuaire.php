@@ -16,15 +16,15 @@
         <br><br>
 
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <ul>   
                     <div class="card cardCeo">
                         <img class="card-img-top" src="../img/annuaire/ceo.jpeg" alt="Card image">
                         <div class="card-img-overlay">
                             <h4 class="card-title text-white">Guy Don De Course</h4>
-                            <p class="card-text text-white">DRH of LLSM</p>
+                            <p class="card-text text-white">CEO of LLSM</p>
                         </div>
                     </div>
                 </ul>
@@ -40,9 +40,7 @@
         <br><br>
 
         <div class="row">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-5">
+            <div class="col-sm-6">
                 <ul>
                     <div class="card cardBoss">
                         <img class="card-img-top" src="../img/annuaire/2nd.jpg" alt="Card image">
@@ -53,7 +51,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-6">
                 <ul>
                     <div class="card cardBoss">
                         <img class="card-img-top" src="../img/annuaire/drh.jpeg" alt="Card image">
@@ -75,8 +73,6 @@
         <br><br><br><br>
 
         <div class="row">
-            <div class="col-sm-1">
-            </div>
             <div class="col-sm-4">
                 <ul>
                     <div class="card cardEmploye">
@@ -112,7 +108,7 @@
         <br><br>
 
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
             </div>
             <div class="col-sm-4">
                 <ul>
@@ -124,7 +120,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <ul>   
                     <div class="card cardEmploye">
                         <img class="card-img-top" src="../img/annuaire/homme3.jpg" alt="Card image">
@@ -139,8 +135,6 @@
         <br><br>
 
         <div class="row">
-            <div class="col-sm-1">
-            </div>
             <div class="col-sm-4">
                 <ul>
                     <div class="card cardEmploye">
@@ -161,7 +155,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-4">
                 <ul>
                     <div class="card cardEmploye">
                         <img class="card-img-top" src="../img/annuaire/femme4.jpg" alt="Card image">

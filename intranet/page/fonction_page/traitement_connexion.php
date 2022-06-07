@@ -3,16 +3,23 @@ session_start();
 //Chargement des utilisateurs
 $utilisateurs = json_decode(file_get_contents("../gestion_user/users.json"), true);
 
-echo '<pre>';
-print_r($utilisateurs);
-echo '</pre>';
 ?>
 <!doctype html>
 <html lang="fr">
+<head>
+  <script type="text/javascript" src="/js/functions.js"></script>
+</head>
 <body>
   <?php
 
   for ($i = 0; $i<count($utilisateurs); $i++) {
+
+    if ($utilisateurs[$i]['actif'] == 0) {
+
+      echo '<script> inactif(); </script>';
+      die();
+
+    }
 
     if ($_POST['login'] == $utilisateurs[$i]['login'] && $_POST['mdp'] == $utilisateurs[$i]['mdp']) {
 
@@ -33,17 +40,15 @@ echo '</pre>';
 
   if (empty($_SESSION['nom'])) {
 
-    echo '<span>Le login et mot de passe n\'existe pas dans la base de donnée</span>';
+    echo '<script> error_login(); </script>';
+    die();
 
   }
   else {
-    echo '<p> Login : '. $_SESSION["nom"] .'</p>';
-    echo '<p> Role : '. $_SESSION["role"] .'</p>';
+    header("Location: ../accueil.php");
   }
 
   ?>
-
-  <a href="../accueil.php"><button>Retour à l'accueil</button></a>
 
 </body>
 </html>

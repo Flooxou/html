@@ -52,14 +52,17 @@ function getHeader(){
 function getNav(){
     echo '  <nav class="navbar navbar-expand-sm justify-content-center" id="navbarcss">
                     <!-- Links -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="navtxt">Gestion des fichiers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gestion_utilisateurs.php" id="navtxt">Gestion des utilisateurs</a>
-                        </li>
-                        <li class="nav-item dropdown">
+                    <ul class="navbar-nav me-auto">';
+                    if ($_SESSION['role'] == 'Admin' || $_SESSION['role'] == 'Moderateur') {
+                        echo '<li class="nav-item">
+                                <a class="nav-link" href="#" id="navtxt">Gestion des fichiers</a>
+                            </li>';
+
+                        echo '<li class="nav-item">
+                                <a class="nav-link" href="gestion_utilisateurs.php" id="navtxt">Gestion des utilisateurs</a>
+                            </li>';
+                    }
+                    echo '<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navtxt">Espace de fichiers</a>                            
                             <ul class="dropdown-menu" id="navbarcss">
                                 <li><a class="dropdown-item" href="fichier_groupe.php" id="navtxt">Fichiers de groupe</a></li>
@@ -72,14 +75,12 @@ function getNav(){
                     </ul>';
 
     echo '<div class="connexion-header">
-    <span class="text-dark">';
+    <span class="titre">';
 
     if (isset($_SESSION["nom"])) {
         echo $_SESSION["nom"] . '(' . $_SESSION["role"] . ')';
-    }
+        echo '<a href="/page/fonction_page/traitement_deconnexion.php" class="btn btn-outline-warning btn-sm">Se déconnecter</a>';
 
-    if (isset($_SESSION["nom"])) {
-        echo '<a href="/page/fonction_page/traitement_deconnexion.php" class="btn btn-outline-dark btn-sm">Se déconnecter</a>';
     }
 
     echo '</div>
